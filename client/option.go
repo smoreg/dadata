@@ -2,6 +2,7 @@ package client
 
 import (
 	"net/http"
+	"net/url"
 )
 
 type (
@@ -13,6 +14,17 @@ type (
 func WithHttpClient(c *http.Client) Option {
 	return func(opts *clientOptions) {
 		opts.httpClient = c
+	}
+}
+
+// WithHttpClient sets custom http.Client.
+func WithEndpointURL(endpointURL string) Option {
+	endpointURLParsed, err := url.Parse(endpointURL)
+	if err != nil { // TODO(Smoreg): BC 2 no panic
+		panic(err)
+	}
+	return func(opts *clientOptions) {
+		opts.endpointURL = endpointURLParsed
 	}
 }
 
