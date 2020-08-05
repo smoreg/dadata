@@ -1,7 +1,7 @@
 package suggest
 
 import (
-	"github.com/ekomobile/dadata/v2/api/model"
+	"github.com/smoreg/dadata/v2/api/model"
 )
 
 type (

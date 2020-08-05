@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ekomobile/dadata/v2/api/suggest"
+	"github.com/smoreg/dadata/v2/api/suggest"
 	"github.com/stretchr/testify/suite"
 )
 
